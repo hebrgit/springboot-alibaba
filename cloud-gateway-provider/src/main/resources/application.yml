@@ -1,0 +1,20 @@
+server:
+  port: 5000
+spring:
+  application:
+    name: cloud-gateway-provider
+  cloud:
+    gateway:
+      routes:
+      - id: after_route
+        uri: http://localhost:8002
+       # uri: lb://cloud-provider-payment
+        predicates:
+        - Path=/v1/payment/**
+      discovery:
+        locator:
+          enabled: true
+eureka:
+  client:
+    service-url:
+      defaultZone: http://com.eureka6001:6001/eureka/

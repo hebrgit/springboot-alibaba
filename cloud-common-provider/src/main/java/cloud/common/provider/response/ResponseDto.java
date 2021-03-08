@@ -2,13 +2,18 @@ package cloud.common.provider.response;
 
 
 import cloud.common.provider.exception.ApplicationException;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+import java.io.Serializable;
 
 /**
  * @ClassName ResponseDto
  * @Author hebo
  * @Date 2021/3/5 16:01
  **/
-public class ResponseDto<T> implements IResponse<T> {
+@NoArgsConstructor
+public class ResponseDto<T> implements IResponse<T>, Serializable {
 
     /**
      * 返回编码

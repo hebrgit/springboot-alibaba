@@ -2,7 +2,9 @@ server:
   port: 8001
 spring:
   application:
-    name: provider-payment8001
+    name: cloud-provider-payment
+  profiles:
+    active: dev
 
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource
@@ -14,3 +16,16 @@ spring:
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.hebr.springboot.entites   #所有entity别名类所在的包i
+logging:
+  level:
+    spring.hebr.springboot: debug
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    instance-id: cloud-provider-payment8001
+  client:
+    fetch-registry:  true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://com.eureka6001:6001/eureka,http://com.eureka6002:6002/eureka/

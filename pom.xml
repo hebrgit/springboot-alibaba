@@ -10,6 +10,17 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-common-provider</module>
+        <module>cloud-provider-order7001</module>
+        <module>cloud-provider-order7002</module>
+        <module>cloud-eureka-server6002</module>
+        <module>cloud-eureka-server6001</module>
+        <module>cloud-provider-payment8002</module>
+        <module>cloud-zookpper-provder</module>
+        <module>cloud-consul-provider</module>
+        <module>cloud-provider-hystrix-payment</module>
+        <module>cloud-consume-hystrix-order7003</module>
+        <module>cloud-hystrix-dashboard</module>
+        <module>cloud-gateway-provider</module>
         <module>cloud-eureka-provider6003</module>
         <module>cloud-config-provider</module>
         <module>cloud-config-client-provider</module>
@@ -30,6 +41,8 @@
         <druid.version>1.1.16</druid.version>
         <mybaits.spring.boot.version>2.1.0</mybaits.spring.boot.version>
         <mybatisplus.version>3.2.0</mybatisplus.version>
+        <swagger.version>2.9.2</swagger.version>
+        <hutool.version>5.2.2</hutool.version>
     </properties>
 
 
@@ -38,7 +51,7 @@
             <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
-                <version>2.2.2.RELEASE</version>
+                <version>2.4.2</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -46,10 +59,11 @@
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR10</version>
+                <version>2020.0.1</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
 
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
@@ -89,11 +103,38 @@
                 <version>${druid.version}</version>
             </dependency>
 
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger2 -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger2</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui -->
+            <dependency>
+                <groupId>io.springfox</groupId>
+                <artifactId>springfox-swagger-ui</artifactId>
+                <version>${swagger.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
     <build>
-
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <addResources>true</addResources>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 
 

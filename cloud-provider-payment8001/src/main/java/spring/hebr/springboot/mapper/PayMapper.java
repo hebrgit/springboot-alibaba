@@ -1,8 +1,9 @@
 package spring.hebr.springboot.mapper;
 
+import cloud.common.provider.entities.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import spring.hebr.springboot.entities.Payment;
+
 
 /**
  * @ClassName PanyMapper

@@ -1,0 +1,37 @@
+server:
+  port: 7002
+
+spring:
+  profiles:
+    active: dev
+  application:
+    name: cloud-provider-order7001
+  datasource:
+    username: navicat
+    password: hb151914!@
+    url: jdbc:mysql://rm-bp197o09qo91ve0zhbo.mysql.rds.aliyuncs.com:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+eureka:
+  instance:
+    instance-id: cloud-provider-order7002
+  client:
+    #表示自己就是注册中心，不需要维护服务实例，并且不需要检索服务
+    fetch-registry: true
+    #表示不向注册中心注册自己
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://com.eureka6001:6001/eureka,http://com.eureka6002:6002/eureka/
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 1000
+        readTimeout: 3000
+        loggerLevel: full
+#ribbon:
+#  ConnectTimeout: 1000
+logging:
+  level:
+    cloud.provider.order7001.fegin.PaymentFeignService: debug
+#  ReadTimeout: 3000

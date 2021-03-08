@@ -1,0 +1,13 @@
+server:
+  port: 7004
+spring:
+  application:
+    name: cloud-consume-hystrix-order
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://com.eureka6001:6001/eureka/
+feign:
+  circuitbreaker:
+    enabled: true

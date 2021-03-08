@@ -1,12 +1,14 @@
 package spring.hebr.springboot.service.impl;
 
+import cloud.common.provider.entities.Payment;
+import com.baomidou.mybatisplus.core.toolkit.IdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
-import spring.hebr.springboot.entities.Payment;
+
 import spring.hebr.springboot.mapper.PayMapper;
 import spring.hebr.springboot.service.PayService;
 
-import javax.validation.Payload;
 
 /**
  * @ClassName PayServiceImpl
@@ -19,13 +21,25 @@ public class PayServiceImpl implements PayService {
     @Autowired
     private PayMapper payMapper;
 
+    @Value("${server.port}")
+    private String port;
+
     @Override
-    public boolean createPayment(final Payment payment) {
-        return payMapper.createPayment(payment);
+    public String createPayment(final Payment payment) {
+        long id = IdWorker.getId();
+        payment.setId(id);
+        boolean payment1 = payMapper.createPayment(payment);
+        if (payment1){
+            return "订单创建成功"+port;
+        }else {
+            return "订单创建失败"+port;
+        }
     }
 
     @Override
     public Payment selectPayment(Long id) {
-        return payMapper.selectPayment(id);
+        Payment payment = payMapper.selectPayment(id);
+        payment.setPort(port);
+        return payment;
     }
 }

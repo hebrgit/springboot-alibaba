@@ -2,6 +2,7 @@ package spring.hebr.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.stereotype.Service;
 
 /**
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Service;
  * @Date 2021/3/5 15:31
  **/
 @SpringBootApplication
+@EnableEurekaClient
 public class ProviderPayment8001SpringApplication {
 
     public static void main(String[] args) {

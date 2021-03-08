@@ -1,0 +1,16 @@
+server:
+  port: 8004
+spring:
+  application:
+    name: consul-provider
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://rm-bp197o09qo91ve0zhbo.mysql.rds.aliyuncs.com:3306/db2021?useUnicode=true&characterEncoding=utf-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: navicat
+    password: hb151914!@
+  cloud:
+    consul:
+      discovery:
+        ip-address: localhost:8500
+        service-name: consul-provider

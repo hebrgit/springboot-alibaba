@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="spring.hebr.springboot.mapper.PayMapper">
+<mapper namespace="springboot.mapper.PayMapper">
 
     <!-- 通用查询映射结果 -->
-    <resultMap id="BaseResultMap" type="spring.hebr.springboot.entities.Payment">
+    <resultMap id="BaseResultMap" type="cloud.common.provider.entities.Payment">
         <result column="id" property="id"/>
         <result column="serial" property="serial"/>
     </resultMap>
@@ -12,27 +12,30 @@
     <sql id="Base_Column_List">
         id,serial
     </sql>
-    <insert id="createPayment" parameterType="spring.hebr.springboot.entities.Payment" useGeneratedKeys="true" keyProperty="id">
-        insert into  payment
+    <insert id="createPayment" parameterType="cloud.common.provider.entities.Payment">
+        insert into payment
         <trim prefix="(" suffixOverrides="," suffix=")">
+            <if test="id !=null">
+                id,
+            </if>
             <if test="serial != null">
                 serial
             </if>
-            <if test="id !=null">
-                id
-            </if>
+
         </trim>
-        <trim prefix="values (" suffixOverrides=","  suffix=")">
-            <if test="serial != null">
-                serial = #{serial},
-            </if>
+        <trim prefix="value (" suffixOverrides="," suffix=")">
             <if test="id !=null">
-                id #{id}
+                #{id},
             </if>
+            <if test="serial != null">
+                #{serial}
+            </if>
+
         </trim>
     </insert>
-    <select id="selectPayment" resultType="spring.hebr.springboot.entities.Payment">
-        select <include refid="Base_Column_List"></include>
+    <select id="selectPayment" resultType="cloud.common.provider.entities.Payment">
+        select
+        <include refid="Base_Column_List"></include>
         from payment
         <where>
             <if test="id !=null">

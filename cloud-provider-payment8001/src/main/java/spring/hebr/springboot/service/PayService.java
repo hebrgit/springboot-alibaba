@@ -1,7 +1,7 @@
 package spring.hebr.springboot.service;
 
+import cloud.common.provider.entities.Payment;
 import org.apache.ibatis.annotations.Param;
-import spring.hebr.springboot.entities.Payment;
 
 public interface PayService {
 
@@ -12,7 +12,7 @@ public interface PayService {
      * @param payment
      * @return
      */
-    boolean createPayment(@Param("payment") Payment payment);
+    String createPayment(@Param("payment") Payment payment);
 
     /**
      * 查询流水号
