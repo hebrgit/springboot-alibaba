@@ -1,0 +1,23 @@
+server:
+  port: 6005
+spring:
+  application:
+    name: config-client-provider
+  cloud:
+    config:
+      uri: http://localhost:6004
+      username: hebrgit
+      password: hb151914
+      label: master
+      name: application
+      profile: dev
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6003/eureka/
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

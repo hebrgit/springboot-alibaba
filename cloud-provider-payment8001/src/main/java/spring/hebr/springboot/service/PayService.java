@@ -8,6 +8,7 @@ public interface PayService {
 
     /**
      * 创建流水号单据
+     *
      * @param payment
      * @return
      */
@@ -15,6 +16,7 @@ public interface PayService {
 
     /**
      * 查询流水号
+     *
      * @param id
      * @return
      */

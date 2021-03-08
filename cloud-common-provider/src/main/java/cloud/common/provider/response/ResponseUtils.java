@@ -18,16 +18,16 @@ import java.io.Serializable;
 @AllArgsConstructor
 public class ResponseUtils implements Serializable {
 
-    public static ResponseDto<?> wrapSuccess(){
+    public static ResponseDto<?> wrapSuccess() {
         return new ResponseDto<>(BaseResponseEnum.SUCCESS);
     }
 
-    public static ResponseDto<?> wrapSuccess(Object o){
-        return new ResponseDto<>(BaseResponseEnum.SUCCESS,o);
+    public static ResponseDto<?> wrapSuccess(Object o) {
+        return new ResponseDto<>(BaseResponseEnum.SUCCESS, o);
     }
 
     /**
-     * @param code error code
+     * @param code    error code
      * @param message error message
      * @return ResponseDto
      */
@@ -46,9 +46,8 @@ public class ResponseUtils implements Serializable {
     }
 
 
+    public static ResponseDto wrapException(final String code, final String message, final Object body) {
 
-    public static ResponseDto wrapException(final String code, final String message,final Object body) {
-
-        return new ResponseDto(code, message,body);
+        return new ResponseDto(code, message, body);
     }
 }

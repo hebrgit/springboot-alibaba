@@ -12,7 +12,6 @@ public interface IResponse<T> extends Serializable {
 
 
     /**
-     *
      * @return response code
      */
     String getCode();

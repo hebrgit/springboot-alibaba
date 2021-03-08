@@ -5,7 +5,7 @@ package cloud.common.provider.response;
  * @Author hebo
  * @Date 2021/3/5 16:28
  **/
-public enum BaseResponseEnum implements IResponse{
+public enum BaseResponseEnum implements IResponse {
 
     /**
      * "000000", "SUCCESS"
@@ -30,8 +30,7 @@ public enum BaseResponseEnum implements IResponse{
     /**
      * "400000", "系统错误"
      */
-    SYSTEM_EXCEPTION("400000", "系统错误");
-    ;
+    SYSTEM_EXCEPTION("400000", "系统错误");;
 
     private String code;
 

@@ -1,0 +1,21 @@
+server:
+  port: 6004
+spring:
+  application:
+    name: cloud-config-provider
+  cloud:
+    config:
+      label: master
+      server:
+        git:
+#          uri: git@github.com:hebrgit/springcloudconfig.git
+          search-paths:
+            - springcloudconfig
+          username: hebrgit
+          password: hb151914
+          force-pull: true
+          uri: https://github.com/hebrgit/springcloudconfig.git
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6003/eureka/

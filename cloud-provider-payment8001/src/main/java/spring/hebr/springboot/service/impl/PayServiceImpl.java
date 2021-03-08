@@ -18,6 +18,7 @@ public class PayServiceImpl implements PayService {
 
     @Autowired
     private PayMapper payMapper;
+
     @Override
     public boolean createPayment(final Payment payment) {
         return payMapper.createPayment(payment);

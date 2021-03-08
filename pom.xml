@@ -10,6 +10,9 @@
     <modules>
         <module>cloud-provider-payment8001</module>
         <module>cloud-common-provider</module>
+        <module>cloud-eureka-provider6003</module>
+        <module>cloud-config-provider</module>
+        <module>cloud-config-client-provider</module>
     </modules>
     <packaging>pom</packaging>
 

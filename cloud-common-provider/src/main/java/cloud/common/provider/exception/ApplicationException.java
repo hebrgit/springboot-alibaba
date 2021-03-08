@@ -16,7 +16,7 @@ public class ApplicationException extends RuntimeException {
 
     private String message;
 
-    public ApplicationException(){
+    public ApplicationException() {
         code = BaseResponseEnum.SYSTEM_EXCEPTION.getCode();
         message = BaseResponseEnum.SYSTEM_EXCEPTION.getMessage();
     }

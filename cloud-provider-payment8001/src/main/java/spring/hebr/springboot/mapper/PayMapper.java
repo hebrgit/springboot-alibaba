@@ -13,7 +13,7 @@ import spring.hebr.springboot.entities.Payment;
 @Mapper
 public interface PayMapper {
 
-    boolean createPayment(@Param("payment")Payment payment);
+    boolean createPayment(@Param("payment") Payment payment);
 
     Payment selectPayment(@Param("id") Long id);
 }

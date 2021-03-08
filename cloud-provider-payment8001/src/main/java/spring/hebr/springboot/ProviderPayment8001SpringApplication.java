@@ -13,6 +13,6 @@ import org.springframework.stereotype.Service;
 public class ProviderPayment8001SpringApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProviderPayment8001SpringApplication.class,args);
+        SpringApplication.run(ProviderPayment8001SpringApplication.class, args);
     }
 }

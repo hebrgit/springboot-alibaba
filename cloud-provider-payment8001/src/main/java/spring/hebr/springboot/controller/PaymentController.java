@@ -25,13 +25,13 @@ public class PaymentController {
     private PayService payService;
 
     @PostMapping("/createPayment")
-    public ResponseDto createPayment(@RequestBody final Payment payment){
+    public ResponseDto createPayment(@RequestBody final Payment payment) {
 
-       return ResponseUtils.wrapSuccess(payService.createPayment(payment));
+        return ResponseUtils.wrapSuccess(payService.createPayment(payment));
     }
 
     @GetMapping("/selectPayment")
-    public ResponseDto selectPayment(@RequestParam final Long id){
+    public ResponseDto selectPayment(@RequestParam final Long id) {
 
         return ResponseUtils.wrapSuccess(payService.selectPayment(id));
     }

@@ -12,8 +12,9 @@
     <sql id="Base_Column_List">
         id,serial
     </sql>
-    <insert id="createPayment" parameterType="spring.hebr.springboot.entities.Payment" useGeneratedKeys="true" keyProperty="id">
-        insert into  payment
+    <insert id="createPayment" parameterType="spring.hebr.springboot.entities.Payment" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into payment
         <trim prefix="(" suffixOverrides="," suffix=")">
             <if test="serial != null">
                 serial
@@ -22,7 +23,7 @@
                 id
             </if>
         </trim>
-        <trim prefix="values (" suffixOverrides=","  suffix=")">
+        <trim prefix="values (" suffixOverrides="," suffix=")">
             <if test="serial != null">
                 serial = #{serial},
             </if>
@@ -32,7 +33,8 @@
         </trim>
     </insert>
     <select id="selectPayment" resultType="spring.hebr.springboot.entities.Payment">
-        select <include refid="Base_Column_List"></include>
+        select
+        <include refid="Base_Column_List"></include>
         from payment
         <where>
             <if test="id !=null">
