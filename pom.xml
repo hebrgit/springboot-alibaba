@@ -25,6 +25,7 @@
         <module>cloud-config-provider</module>
         <module>cloud-config-client-provider</module>
         <module>cloud-stream-provider</module>
+        <module>springalibaba-nacos-provider9000</module>
     </modules>
     <packaging>pom</packaging>
 
