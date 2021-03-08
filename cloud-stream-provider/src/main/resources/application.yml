@@ -1,0 +1,30 @@
+server:
+  port: 6006
+spring:
+  application:
+    name: cloud-stream-provider
+  cloud:
+    stream:
+      binders: # 此处配置要绑定的rabbitmq的服务信息
+        defaultRabbit: #表示定义的名称，用于binding整合
+          type: rabbit #消息组件类型
+          environment: #设置rabbitmq相关环境配置
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+      bindings: #服务整合处理
+        output: #
+          destination: studyExchange
+          context-type: application/json
+          binder: defaultRabbit
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:6003/erueka/
+  instance:
+    instance-id: stream-provider
+    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 2

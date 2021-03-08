@@ -15,6 +15,7 @@ spring:
           password: hb151914
           force-pull: true
           uri: https://github.com/hebrgit/springcloudconfig.git
+      name: cloud-config-provider
 eureka:
   client:
     service-url:

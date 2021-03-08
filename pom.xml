@@ -24,6 +24,7 @@
         <module>cloud-eureka-provider6003</module>
         <module>cloud-config-provider</module>
         <module>cloud-config-client-provider</module>
+        <module>cloud-stream-provider</module>
     </modules>
     <packaging>pom</packaging>
 
