@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: storage-server
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        file-extension: yaml
+        namespace: 4483cb76-d61c-46c3-920e-0878bae55a82
+        server-addr: 62.234.127.78:8848
+      discovery:
+        server-addr: 62.234.127.78:8848
+        namespace: 4483cb76-d61c-46c3-920e-0878bae55a82
+

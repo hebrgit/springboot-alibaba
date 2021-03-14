@@ -13,13 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NacosController {
 
-    @Value("${server.port}")
-    private String port;
+    @Value("${project.name}")
+    private String name;
 
 
     @GetMapping("/nacosTest")
     public String nacosTest(){
 
-        return "nacos 测试 "+"端口号："+port;
+        return name;
     }
 }

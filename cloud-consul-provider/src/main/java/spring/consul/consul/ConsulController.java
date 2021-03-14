@@ -10,7 +10,7 @@ import java.util.UUID;
  * @author Administrator
  * @class ConsulController
  * @date 2021/3/6:15:06
- * @decs TODO
+ * @decs consul 启动命令 consul agent -dev
  */
 @RestController
 public class ConsulController {

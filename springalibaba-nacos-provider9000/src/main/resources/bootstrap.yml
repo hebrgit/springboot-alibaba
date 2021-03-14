@@ -1,0 +1,17 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: nacos-provider
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 62.234.127.78:8848
+      config:
+        server-addr: 62.234.127.78:8848
+        file-extension: yaml
+    sentinel:
+      transport:
+        dashboard: localhost:8080
